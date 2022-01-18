@@ -1,0 +1,50 @@
+# demonstrate basic troubleshooting using ping,traceroute,ifconfig,nsloopup,netstat and route
+
+ifconfig(interface configuration)
+--------
+Ifconfig is used to configure the kernel-resident network interfaces. It is used at boot time to set up interfaces as necessary. 
+After that, it is usually only needed when debugging or when system tuning is needed. 
+If no arguments are given, ifconfig displays the status of the currently active interfaces
+
+
+ifconfig -a ---> display all interfaces which are currently avaialble
+ifconfig -s ---> display a shortlist like netsat -i
+ifconfig -v ---> be more verbose for some error condition
+
+
+nslookup
+--------
+nslookup is a network administration command-line tool available for many computer operating systems. 
+The main use of nslookup is for troubleshooting DNS related problems. 
+Nslookup can be use in interactive and non-interactive mode.
+
+
+ping
+----
+The Ping tool is used to test whether a particular host is reachable across an IP network.
+A Ping measures the time it takes for packets to be sent from the local host to a destination computer and back. 
+The Ping tool measures and records the round-trip time of the packet and any losses along the way.
+
+ping <ip_addr>
+ping -a ---> audible ping
+ping -c ---> stop after sending count
+
+
+netstat
+-------
+netstat shows all the network connections on an endpoint . by invoking netstat on the local machine ,all of the open ports and connection are shown . 
+The ouput includes connections that are not completely established as well as connections that are being down
+
+
+-a -all ---> show both listening and non-listening sockets , with the -interfaces options, show interfaces that are not up
+-at     ---> to list all udp ports 
+-l      ---> to list only listening ports
+-c      ---> print netstat information continosly
+
+
+route
+-----
+route command is used in linux to work with IP/kernel routing table . it mainly used to set up static routes to specific hosts or networks via an interfaces 
+
+route ---> to display IP/kernel routing table
+

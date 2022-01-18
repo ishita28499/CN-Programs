@@ -1,0 +1,12 @@
+VM1 : sudo apt-get install openssh-client openssh-server
+VM2 : sudo apt-get install openssh-client openssh-server
+
+VM1 : ssh-keygen
+
+VM1 : scp /home/vm1/shubham.pub vm2@192.168.56.102:/home/Downloads
+
+VM2 : go to that dir where .pub file is present
+VM2 : cat shubham.pub >> ~/.ssh-authorized_keys
+
+VM1 : ssh -i ~/shubham vm2@192.168.56.102
+

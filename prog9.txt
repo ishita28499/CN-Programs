@@ -1,0 +1,7 @@
+vm1: sudo apt-get install netcat
+vm2 : sudo apt-get install netcat
+vm1 : nc -l -l 1234
+      Shubham Nigam
+      MCA @RVCE
+
+vm2 : nc <vm1_IP_ADDR> 1234

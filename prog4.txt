@@ -1,0 +1,9 @@
+# Demonstrate to calculate IP addresses using ipcalc
+
+vm1 : change network to NAT
+vm1 : sudo apt-get update
+vm1 : sudo apt-get install ipcalc
+vm1 : ifconfig [to check ip_addr]
+vm1 : ipcalc <vm1_ipaddr>
+
+NOTE : by this we can get class type addressing of that IP addres we will also get sub-net and other details also

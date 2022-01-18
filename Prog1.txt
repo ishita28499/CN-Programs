@@ -1,0 +1,10 @@
+# create a LAN with three or more nodes implementing star topology and demonstrate classful addressing
+vm1 : sudo apt-get update
+vm2 : sudo apt-get update
+vm1 : change network to host-only-adapter
+vm2 : change network to host-only-adapter
+vm1 : sudo iconfig <interface_name> 10.0.2.16
+vm2 : sudo iconfig <interface_name> 10.0.2.15
+vm1 : ping <vm2_ipaddr>
+vm2 : ping <vm1_ipaddr>
+

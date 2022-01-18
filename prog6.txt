@@ -1,0 +1,18 @@
+VM1 : install dnsmasq
+VM1 : sudo service network-manager stop
+VM1 : sudo systemctl stop dnsmasq
+VM1 : sudo nano /etc/dnsmasq.conf
+
+uncomment
+---------
+domain-needed
+bogus-priv
+port=53
+strict-order
+expand-hosts
+domain=shubham.com
+
+sudo nano /etc/hosts
+10.0.2.15 shubham
+
+ping shubham.com

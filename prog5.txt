@@ -1,0 +1,24 @@
+VM1 : sudo apt-get install dnsmasq
+VM1 : sudo service network-manager stop
+VM1 : sudo systemctl stop dnsmasq
+VM1 : sudo nano /etc/dnsmasq.conf
+
+uncomment line 
+--------------
+bogus-priv
+no-resolv
+bind-interfaces
+interface=enp0s3
+port=53
+domain-needed
+dhcp-range=192.168.0.10 , 192.168.0.20,12h
+
+VM1 : change IP
+
+VM1 : sudo service network-manager start
+VM1 : sudo systemctl restart dnsmasq
+VM1 : sudo systemctl status dnsmasq
+
+VM1 : sudo dhclient -v
+VM1 : sudo dhclient enp0s3
+VM1 : ifconfig

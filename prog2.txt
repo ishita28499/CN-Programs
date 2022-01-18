@@ -1,0 +1,32 @@
+# create a LAN using physical network/virtual machine and install FTP server to demonstrate file transfer
+sending file from VM1 to VM2
+----------------------------
+vm1 : change network to NAT
+vm2 : change network to NAT
+vm1 : sudo apt-get update
+vm2 : sudo apt-get update
+vm1 : sudo apt-get install ftp proftpd
+vm2 : sudo apt-get install ftp proftpd
+vm1 : change network to host-only-adapter
+vm2 : change network to host-only-adapter
+vm1 : cd Desktop
+vm1 : nano index.txt [and write something in file]
+vm1 : ftp <vm2_ipaddr>
+vm1 : cd Desktop
+vm1 : put index.txt
+vm2 : cd Desktop
+vm2 : ls
+vm2 : now you can able to see that file
+
+
+sending file from VM2 to VM1
+----------------------------
+vm2 : cd Desktop
+vm2 : nano index1.txt [and write something in file]
+vm2 : ftp <vm1_ipaddr>
+vm2 : cd Desktop
+vm2 : put index1.txt
+vm1 : cd Desktop
+vm1 : ls
+vm1 : now you can able to see that file
+

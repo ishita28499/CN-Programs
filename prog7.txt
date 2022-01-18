@@ -1,0 +1,24 @@
+pVM1 : change to NAT network
+VM2 : change to NAT network
+
+VM1 : sudo apt-get update
+VM2 : sudo apt-get update
+
+VM1 : sudo apt-get install nmap
+VM2 : sudo apt-get install nmap 
+
+VM1 : change to host-only-adapter
+VM2 : change to host-only-adapter
+
+VM1 : nmap -sn 192.168.56.101/24
+VM1 : sudo iptables -L -n --line
+
+VM2 : ping <IP_addr_VM1>
+
+VM1 : sudo iptables -P INPUT DROP
+VM1 : sudo iptables -P INPUT ACCEPT
+
+VM1 : sudo iptables -I INPUT -s 192.168.56.102 -J DROP
+VM1 : sudo iptables -I INPUT -s 192.168.56.102 -J ACCEPT
+
+
